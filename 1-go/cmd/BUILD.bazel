@@ -12,5 +12,5 @@ go_binary(
     name = "cmd",
     embed = [":go_default_library"],
     visibility = ["//visibility:public"],
-    x_defs = {"github.com/andrewg-spectra/bazel_stamp_examples/1-go/internal/version.Version": "0.9"},
+    x_defs = {"github.com/andrewg-spectra/bazel_stamp_examples/1-go/internal/version.Version": "{BUILD_VERSION}"},
 )
