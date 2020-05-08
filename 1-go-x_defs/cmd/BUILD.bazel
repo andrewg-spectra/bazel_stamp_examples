@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 go_library(
     name = "go_default_library",
     srcs = ["main.go"],
-    importpath = "github.com/andrewg-spectra/bazel_stamp_examples/1-go/cmd",
+    importpath = "github.com/andrewg-spectra/bazel_stamp_examples/1-go-x_defs/cmd",
     visibility = ["//visibility:private"],
     deps = ["//internal/version:go_default_library"],
 )
@@ -12,5 +12,5 @@ go_binary(
     name = "cmd",
     embed = [":go_default_library"],
     visibility = ["//visibility:public"],
-    x_defs = {"github.com/andrewg-spectra/bazel_stamp_examples/1-go/internal/version.BuildVersion": "{BUILD_VERSION}"},
+    x_defs = {"github.com/andrewg-spectra/bazel_stamp_examples/1-go-x_defs/internal/version.BuildVersion": "{BUILD_VERSION}"},
 )
