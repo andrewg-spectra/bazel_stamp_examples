@@ -10,4 +10,5 @@ been initially set to "redacted".
 ## With `go`:
 
 `export $(../version.sh | tr ' ' =)`
+
 `go run -ldflags "-X github.com/andrewg-spectra/bazel_stamp_examples/go_x_defs/internal/version.BuildVersion=$BUILD_VERSION" cmd/go_x_defs/main.go`
