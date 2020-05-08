@@ -5,8 +5,9 @@ been initially set to "redacted".
 
 With `bazel`:
 
-`bazelisk run --stamp --workspace_status_command=$PWD/../version.sh //cmd`
+`bazelisk run --stamp --workspace_status_command=$PWD/../version.sh //cmd/go_x_defs`
 
 With `go`:
 
-`go build
+`export $(../version.sh | tr ' ' =)`
+`go run -ldflags "-X github.com/andrewg-spectra/bazel_stamp_examples/go_x_defs/internal/version.BuildVersion=$BUILD_VERSION" cmd/go_x_defs/main.go`
