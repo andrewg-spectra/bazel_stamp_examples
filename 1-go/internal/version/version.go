@@ -1,4 +1,4 @@
 package version
 
-// Version of binary
-var Version = "redacted"
+// BuildVersion of binary
+var BuildVersion = "redacted"
