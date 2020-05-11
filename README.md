@@ -17,3 +17,13 @@ There are two different styles of stamps:
 
 To use a *stable* stamp, prefix the name of the key with `STABLE_`. Otherwise, the stamp will be
 considered volatile. For the purposes of setting the build version, a volatile stamp is desired.
+
+## Strategies
+
+Regardless of the language, there are two general strategies to stamp binaries:
+
+1. Link-time definitions
+1. Code generation
+
+Since code generation is a heavy handed strategy that includes developing and maintaining code 
+generators, prefer using link-time definitions when supported.
