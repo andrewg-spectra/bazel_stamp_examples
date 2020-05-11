@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    importpath = "github.com/andrewg-spectra/bazel_stamp_examples/go_generate/cmd/generate_version",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "generate_version",
+    embed = [":go_default_library"],
+    visibility = ["//visibility:public"],
+)

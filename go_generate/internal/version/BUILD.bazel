@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+genrule(
+    name = "generate_version",
+    srcs = ["version.go"],
+    outs = ["version.gen.go"],
+    stamp = 1,
+    cmd = "$(location //cmd/generate_version) -in=$< -out=$@ -ver=`grep BUILD_VERSION < bazel-out/volatile-status.txt | cut -d ' ' -f2`",
+    tools = ["//cmd/generate_version"],
+)
+
+go_library(
+    name = "go_default_library",
+    srcs = ["version.gen.go"],
+    importpath = "github.com/andrewg-spectra/bazel_stamp_examples/go_generate/internal/version",
+    visibility = ["//:__subpackages__"],
+)
