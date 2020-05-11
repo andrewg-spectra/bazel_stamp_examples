@@ -5,6 +5,7 @@ source code is compiled into the binary.
 
 ## With `bazel`:
 
+`bazelisk run --stamp --workspace_status_command=$PWD/../version.sh //cmd/go_generate`
 
 ## With `go`:
 
@@ -13,7 +14,3 @@ source code is compiled into the binary.
 `go generate cmd/generate_version/main.go`
 
 `go run cmd/go_generate/main.go`
-
-## With `bazel`
-
-`bazelisk run --stamp --workspace_status_command=$PWD/../version.sh //cmd/go_generate`
