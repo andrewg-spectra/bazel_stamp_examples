@@ -1,0 +1,24 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+sh_binary(
+    name = "gen_version",
+    srcs = ["gen_version.sh"],
+)
+
+genrule(
+    name = "run_gen_version",
+    outs = ["version.gen.h"],
+    cmd = "$(location :gen_version) `grep BUILD_VERSION < bazel-out/volatile-status.txt | cut -d ' ' -f2` > $@",
+    stamp = 1,
+    tools = [":gen_version"],
+)
+
+cc_library(
+    name = "version-info",
+    srcs = ["version.cc"],
+    hdrs = [
+        "version.gen.h",
+        "version.h",
+    ],
+    visibility = ["//main:__pkg__"],
+)
