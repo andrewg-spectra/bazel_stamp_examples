@@ -1,0 +1,9 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+   name = "version-info",
+   srcs = ["version.cc"],
+   hdrs = ["version.h"],
+   linkstamp = "version-linkstamp.cc",
+   visibility = ["//main:__pkg__"],
+)
