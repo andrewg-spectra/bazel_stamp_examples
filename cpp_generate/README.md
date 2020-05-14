@@ -1,6 +1,6 @@
 ## C++ generate
 
-This examples uses code generation to write a C++ header file a `#define` for the build number. The 
+This examples uses code generation to write a C++ header file defining the build number. The 
 generated source code is compiled into the binary. 
 
 ## With `bazel`:
