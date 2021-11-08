@@ -26,3 +26,5 @@ Regardless of the language, there are two general strategies to stamp binaries:
 
 Since code generation is a heavy handed strategy that includes developing and maintaining code 
 generators, prefer using link-time definitions when supported.
+
+some fake work
